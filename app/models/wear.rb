@@ -1,5 +1,6 @@
 class Wear < ApplicationRecord
   belongs_to :closet
+  has_one_attached :photo
   enum season: [:summer, :spring, :winter, :fall]
   enum color: [:white,:black,:grey,:yellow,:red,:blue,:green,:brown,:pink,:orange,:purple]
   enum wear_type: [
