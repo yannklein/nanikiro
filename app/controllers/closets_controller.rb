@@ -1,5 +1,5 @@
 class ClosetsController < ApplicationController
-  before_action :find_closet, only: [:show, :update]
+  before_action :find_closet, only: [:show, :update, :destroy]
   def index
     @closets = Closet.all
   end
@@ -33,7 +33,7 @@ class ClosetsController < ApplicationController
   private 
 
   def find_closet
-    Closet.find(params[:id])
+    @closet = Closet.includes(:wears).find(params[:id])
   end
 
   def closet_params

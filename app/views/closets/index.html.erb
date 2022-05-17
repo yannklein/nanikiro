@@ -1,0 +1,13 @@
+<h1>My closets</h1>
+
+<div class="container">
+  <div class="row">
+  <% @closets.each do |closet| %>
+    <div class="col-12 col-md-4">
+      <%= link_to closet_path(closet) do %>
+        <h2><%= closet.name %></h2>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>

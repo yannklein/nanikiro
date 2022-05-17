@@ -1,0 +1,15 @@
+<h1><%= @closet.name %></h1>
+
+<div class="container">
+  <div class="row">
+  <% @closet.wears.each do |wear| %>
+    <div class="col-12 col-md-4">
+      <%= link_to wear_path(wear), style: "height: 240px; width: 100%; background-size: cover; background-image: url(#{wear.photo.attached? ? cl_image_path(wear.photo.key) : image_path("wear.png")})" do %>
+        <p><%= wear.wear_type %></p>
+        <p><%= wear.season %></p>
+        <p><%= wear.color %></p>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
