@@ -5,6 +5,11 @@ class ClosetsController < ApplicationController
   end
 
   def show
+    @wear_by_cat = Hash.new([])
+    @closet.wears.each do |wear| 
+      @wear_by_cat[wear.category] << wear
+      raise
+    end
   end
 
   def create

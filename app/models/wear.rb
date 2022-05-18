@@ -16,34 +16,34 @@ class Wear < ApplicationRecord
   ]
   
   def category
-    :top_jacket if [
+    return :top_jacket if [
       :cardigan,:cloak,:coat,:jacket,:jumper,:poncho,
       :sweater,:tracksuit,:waistcoat
-    ].include?(type)
-    :top if [
+    ].include?(wear_type.to_sym)
+    return :top if [
       :blouse,:bustier,:corset,:shirt,:tops,:tshirt
-    ].include?(type)
-    :bottom if [
+    ].include?(wear_type.to_sym)
+    return :bottom if [
       :bloomers,:dungarees,:jeans,:kilt,
       :knickerbockers,:leggings,:legwarmers,
       :pants,:trousers,:petticoat,:shorts,
       :skirt,:skort
-    ].include?(type)
-    :onepiece if [
+    ].include?(wear_type.to_sym)
+    return :onepiece if [
       :blouse,:bodysuit,:caftan,:dress,
       :jumpsuit,:kimono,:leotard,:playsuit,
       :pyjamas,:sarong,:teddy
-    ].include?(type)
-    :head if [
-    ].include?(type)
-    :shoes if [
+    ].include?(wear_type.to_sym)
+    return :head if [
+    ].include?(wear_type.to_sym)
+    return :shoes if [
       :shoes,:hills
-    ].include?(type)
-    :underwear if [
+    ].include?(wear_type.to_sym)
+    return :underwear if [
       :panties,:bra,:tights
-    ].include?(type)
-    :other if [
+    ].include?(wear_type.to_sym)
+    return :other if [
       :shawl,:sock,:swimsuit,:tie
-    ].include?(type)
+    ].include?(wear_type.to_sym)
   end
 end

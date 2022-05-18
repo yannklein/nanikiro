@@ -2,14 +2,29 @@
 
 <div class="container">
   <div class="row">
-  <% @closet.wears.each do |wear| %>
-    <div class="col-12 col-md-4">
-      <%= link_to wear_path(wear), style: "height: 240px; width: 100%; background-size: cover; background-image: url(#{wear.photo.attached? ? cl_image_path(wear.photo.key) : image_path("wear.png")})" do %>
-        <p><%= wear.wear_type %></p>
-        <p><%= wear.season %></p>
-        <p><%= wear.color %></p>
-      <% end %>
+    <div class="col-6">
+      <div class="accordion" id="accordionCloset">
+      <%= raise %>
+        <% @wear_by_cat.each do |category, wears| %>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= category %>" aria-expanded="true" aria-controls="collapse-<%= category %>">
+                <%= category %>
+              </button>
+            </h2>
+            <div id="collapse-<%= category %>" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionCloset">
+              <div class="accordion-body">
+                <% wears.each do |wear| %>
+                  wear.id
+                  <%# <%= image_tag wear.photo.key, :alttext %> %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
     </div>
-  <% end %>
+    <div class="col-6">
+    </div>
   </div>
 </div>
