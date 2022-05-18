@@ -16,7 +16,9 @@
   <body>
   <div class="page-frame-content">
     <div class="page-frame-header">
-      <%= render 'shared/navbar' %>
+    <% unless current_page?('/') %>
+      <%= render 'shared/navbar' %>  
+    <% end %>
     </div>
     <div class="page-frame-body">
       <%= render 'shared/flashes' %>

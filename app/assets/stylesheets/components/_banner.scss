@@ -1,0 +1,13 @@
+.banner-frame {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 80px;
+  }
+  p {
+    font-size: 24px;
+  }
+}
