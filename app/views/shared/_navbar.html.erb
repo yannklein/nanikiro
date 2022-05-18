@@ -1,35 +1,17 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
+<div class="navbar-vanilla" data-controller="navbar">
+  <%= link_to closets_path, class: "navbar-vanilla-section" do %> 
+    <span class="jpic jpic-kimono navbar-vanilla-logo"></span>
+    <h2 class="navbar-vanilla-brand" >な二キロ</h2>
+  <% end %>
+  <div class="navbar-vanilla-section">
+    <div class="navbar-vanilla-menu">
+      <%= link_to "私の服", closets_path %>
+    </div>
+    <div class="navbar-vanilla-profile" data-action="click->navbar#openProfile">
+      <img src="https://avatars2.githubusercontent.com/u/26819547" alt="">
+      <ul>
+        <li><a href="#">プロファイル</a></li>
+        <li><a href="#">ログイン</a></li>
       </ul>
     </div>
   </div>
