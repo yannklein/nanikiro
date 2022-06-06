@@ -1,0 +1,28 @@
+<div class="closet-drawer mt-5">
+      <div class="accordion" id="accordionCloset">
+        <% Wear::CATEGORY.each do |category| %>
+          <div class="accordion-item rounded">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= category %>" aria-expanded="true" aria-controls="collapse-<%= category %>">
+                <%= category.to_s.titleize %>
+              </button>
+            </h2>
+            <div id="collapse-<%= category %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionCloset">
+              <div class="accordion-body">
+                <% if wear_by_cat[category] %>
+                  <div class="container">
+                    <div class="row">
+                      <% wear_by_cat[category].each do |wear| %>
+                      <div class="col-4">
+                        <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100") : image_tag("wear.png", class: "w-100") %>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
+    </div>

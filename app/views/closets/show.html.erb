@@ -1,30 +1,10 @@
-<h1><%= @closet.name %></h1>
-
 <div class="container">
-  <div class="row">
-    <div class="col-6">
-      <div class="accordion" id="accordionCloset">
-      <%= raise %>
-        <% @wear_by_cat.each do |category, wears| %>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= category %>" aria-expanded="true" aria-controls="collapse-<%= category %>">
-                <%= category %>
-              </button>
-            </h2>
-            <div id="collapse-<%= category %>" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionCloset">
-              <div class="accordion-body">
-                <% wears.each do |wear| %>
-                  wear.id
-                  <%# <%= image_tag wear.photo.key, :alttext %> %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <% end %>
-      </div>
+  <div class="row justify-content-center h-100 gx-sm-5">
+    <div class="col-10 order-sm-2 col-sm-6 col-md-6 col-lg-6">
+      <%= render 'mannequin' %>
     </div>
-    <div class="col-6">
+    <div class="col-10 order-sm-1 col-sm-6 col-md-5 col-lg-4">
+      <%= render 'closet', wear_by_cat: @wear_by_cat %>
     </div>
   </div>
 </div>

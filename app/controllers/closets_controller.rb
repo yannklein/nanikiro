@@ -5,11 +5,7 @@ class ClosetsController < ApplicationController
   end
 
   def show
-    @wear_by_cat = Hash.new([])
-    @closet.wears.each do |wear| 
-      @wear_by_cat[wear.category] << wear
-      raise
-    end
+    @wear_by_cat = @closet.wears.group_by { |wear| wear.category }
   end
 
   def create

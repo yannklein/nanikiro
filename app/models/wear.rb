@@ -1,4 +1,5 @@
 class Wear < ApplicationRecord
+  CATEGORY = [:top_jacket, :top, :bottom, :onepiece, :head, :shoes, :underwear, :other ]
   belongs_to :closet
   has_one_attached :photo
   enum season: [:summer, :spring, :winter, :fall]

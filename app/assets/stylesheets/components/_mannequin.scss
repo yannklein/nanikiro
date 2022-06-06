@@ -1,0 +1,25 @@
+.mannequin {
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr repeat(2, 2fr) 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 8px;
+  margin-bottom: 32px;
+  div {
+    border-radius: 16px;
+  }
+  div:not(.body) {
+    border: 2px dotted $cream;
+    min-height: 18vmin;
+    min-width: 18vmin;
+    z-index: 1;
+  }
+  .head { grid-area: 1 / 2 / 2 / 3; }
+  .chest { grid-area: 2 / 2 / 3 / 3; }
+  .legs { grid-area: 3 / 2 / 4 / 3; }
+  .feet { grid-area: 4 / 2 / 5 / 3; }
+  .jacket { grid-area: 2 / 1 / 3 / 2; }
+  .others { grid-area: 3 / 3 / 4 / 4; }
+  .body { grid-area: 2 / 2 / 4 / 3; }
+}
