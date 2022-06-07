@@ -22,8 +22,8 @@
     z-index: 1;
   }
   .head { grid-area: 1 / 6 / 3 / 8; }
-  .chest { grid-area: 3 / 5 / 7 / 9; }
-  .legs { grid-area: 7 / 6 / 11 / 8; }
+  .top { grid-area: 3 / 5 / 7 / 9; }
+  .bottom { grid-area: 7 / 6 / 11 / 8; }
   .feet { grid-area: 11 / 6 / 13 / 8; }
   .jacket { grid-area: 3 / 1 / 7 / 5; }
   .others { grid-area: 8 / 9 / 11 / 12; }

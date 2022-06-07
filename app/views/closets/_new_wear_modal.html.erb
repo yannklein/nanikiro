@@ -7,16 +7,16 @@
       </div>
       <div class="modal-body text-secondary">
         <%= simple_form_for [@closet, @wear] do |f| %>
-          <%= f.input :color, collection: Wear.colors %>
-          <%= f.input :wear_type, collection: Wear.wear_types %>
-          <%= f.input :season, collection: Wear.seasons %>
+          <%= f.input :color, collection: Wear.colors.keys, selected: @wear.color %>
+          <%= f.input :wear_type, collection: Wear.wear_types.keys, selected: @wear.wear_type %>
+          <%= f.input :season, collection: Wear.seasons.keys, selected: @wear.season %>
           <%= f.input :photo %>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= f.submit "Save changes", class:"btn btn-primary" %>
+          </div>
         <% end %>
         
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

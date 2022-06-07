@@ -1,5 +1,5 @@
 class Wear < ApplicationRecord
-  CATEGORY = [:top_jacket, :top, :bottom, :onepiece, :head, :shoes, :underwear, :other ]
+  CATEGORY = [:jacket, :top, :bottom, :onepiece, :head, :shoes, :underwear, :other ]
   belongs_to :closet
   has_one_attached :photo
   enum season: [:summer, :spring, :winter, :fall]
@@ -17,7 +17,7 @@ class Wear < ApplicationRecord
   ]
   
   def category
-    return :top_jacket if [
+    return :jacket if [
       :cardigan,:cloak,:coat,:jacket,:jumper,:poncho,
       :sweater,:tracksuit,:waistcoat
     ].include?(wear_type.to_sym)

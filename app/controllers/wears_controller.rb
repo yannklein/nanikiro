@@ -6,7 +6,7 @@ class WearsController < ApplicationController
     @closet = Closet.find(params[:closet_id])
     @wear.closet = @closet
     if @wear.save
-      redirect_to wear_path(@wear)
+      redirect_to closet_path(@closet)
     else
       render 'closet/index'
     end
