@@ -1,22 +1,21 @@
-          <div class="accordion-item rounded">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= category %>" aria-expanded="true" aria-controls="collapse-<%= category %>">
-                <%= category.to_s.titleize %>
-              </button>
-            </h2>
-            <div id="collapse-<%= category %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionCloset">
-              <div class="accordion-body">
-                <% if wear_by_cat[category] %>
-                  <div class="container">
-                    <div class="row">
-                      <% wear_by_cat[category].each do |wear| %>
-                      <div class="col-4">
-                        <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100") : image_tag("wear.png", class: "w-100") %>
-                      </div>
-                      <% end %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
+<h2 class="text-center my-3" ><%= category.to_s.titleize %></h2>
+<div data-controller="swiper">
+  <div class="swiper mb-5" data-swiper-target="slider" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
+    <div class="swiper-wrapper">
+      <% wears.each do |wear| %>
+        <div class="swiper-slide">
+          <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100") : image_tag("wear.png", class: "w-100") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div thumbsSlider="" class="swiper swiper-preview" data-swiper-target="preview">
+    <div class="swiper-wrapper">
+      <% wears.each do |wear| %>
+        <div class="swiper-slide">
+          <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100") : image_tag("wear.png", class: "w-100") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
