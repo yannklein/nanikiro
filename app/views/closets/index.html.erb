@@ -6,7 +6,7 @@
         <div class="card-vinyl">
           <% closet.wears.first(4).each do |wear| %>
             <% if wear.photo.attached?  %>
-              <%= cl_image_tag wear.photo.key, effect: "make_transparent:20", :format=>"png", class: "card-vinyl-item" %>   
+              <%= cl_image_tag wear.photo.key, effect: "make_transparent:15", :format=>"png", class: "card-vinyl-item" %>   
             <% else %>
               <%= image_tag "wear.png", class: "card-vinyl-item" %>
             <% end %>

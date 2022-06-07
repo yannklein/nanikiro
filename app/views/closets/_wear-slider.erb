@@ -1,10 +1,10 @@
-<h2 class="text-center my-3" ><%= category.to_s.titleize %></h2>
+<h2 class="text-center mt-5 mb-3" ><%= category.to_s.titleize %></h2>
 <div data-controller="swiper">
-  <div class="swiper mb-5" data-swiper-target="slider" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
+  <div class="swiper mb-3" data-swiper-target="slider" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff">
     <div class="swiper-wrapper">
       <% wears.each do |wear| %>
         <div class="swiper-slide">
-          <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100") : image_tag("wear.png", class: "w-100") %>
+          <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100", effect: "make_transparent:15", :format=>"png",) : image_tag("wear.png", class: "w-100") %>
         </div>
       <% end %>
     </div>
@@ -13,7 +13,7 @@
     <div class="swiper-wrapper">
       <% wears.each do |wear| %>
         <div class="swiper-slide">
-          <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100") : image_tag("wear.png", class: "w-100") %>
+          <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100", effect: "make_transparent:15", :format=>"png",) : image_tag("wear.png", class: "w-100") %>
         </div>
       <% end %>
     </div>

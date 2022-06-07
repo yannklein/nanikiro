@@ -3,22 +3,6 @@
   height: 320px;
 }
 
-.swiper-preview {
-  height: 20%;
-  box-sizing: border-box;
-  padding: 10px 0;
-}
-
-.swiper-preview .swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.4;
-}
-
-.swiper-preview .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
 .swiper-slide {
   display: flex;
   align-items: center;
@@ -27,4 +11,22 @@
   font-size: 22px;
   font-weight: bold;
   color: #fff;
+  background-color: #fff;
+}
+
+.swiper-preview {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.swiper-preview .swiper-slide {
+  width: 25%;
+  height: 64px;
+  opacity: 0.4;
+  border-radius: 0px;
+}
+
+.swiper-preview .swiper-slide-thumb-active {
+  opacity: 1;
 }
