@@ -2,14 +2,14 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newWearLabel">Add some new clothes</h5>
+        <h5 class="modal-title text-secondary" id="newWearLabel">Add some new clothes</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-secondary">
         <%= simple_form_for [@closet, @wear] do |f| %>
-          <%= f.input :color %>
-          <%= f.input :wear_type %>
-          <%= f.input :season %>
+          <%= f.input :color, collection: Wear.colors %>
+          <%= f.input :wear_type, collection: Wear.wear_types %>
+          <%= f.input :season, collection: Wear.seasons %>
           <%= f.input :photo %>
         <% end %>
         
