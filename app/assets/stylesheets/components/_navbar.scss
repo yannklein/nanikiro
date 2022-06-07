@@ -66,6 +66,7 @@
 .navbar-vanilla-profile.active ul {
   opacity: 1;
   visibility: visible;
+  z-index: 99;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
