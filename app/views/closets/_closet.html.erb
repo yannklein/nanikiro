@@ -1,3 +1,11 @@
-<% wear_by_cat.each do |category, wears| %>
-  <%= render 'wear-slider', category: category, wears: wears %>
-<% end %>
+<div class="mb-5">
+  <% wear_by_cat.each do |category, wears| %>
+    <%= render 'wear-slider', category: category, wears: wears %>
+  <% end %>
+  <div class="closet-menu">
+    <a href="#mannequin" data-action="click->closet#scroll">
+      <i class="fas fa-chevron-circle-up"></i>
+    </a>
+    <i class="fas fa-plus-circle"></i>
+  </div>
+</div>
