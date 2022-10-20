@@ -5,7 +5,7 @@
   grid-template-rows: repeat(12, 1fr);
   grid-gap: 8px;
   margin-bottom: 32px;
-  a {
+  & > div {
     svg {
       width: 100%;
       height: 100%;
@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
   }
-  a:not(.body) {
+  & > div:not(.body) {
     border: 2px dotted $cream;
     // min-height: 23vmin;
     min-width: 20vmin;
@@ -31,6 +31,20 @@
   .body { grid-area: 3 / 5 / 11 / 9; }
 }
 
-.mannequin a:has(.mannequin-item)  {
+.mannequin div:has(.mannequin-item)  {
   background-color: white;
+  position: relative;
+}
+
+.mannequin-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mannequin-item-remove {
+  position: absolute;
+  right: 2px; 
+  top: 0px; 
+  color: $pink;
 }

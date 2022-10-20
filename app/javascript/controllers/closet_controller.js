@@ -10,6 +10,6 @@ export default class extends Controller {
   scroll(e){
     e.preventDefault()
     console.log(e.currentTarget);
-    document.getElementById(e.currentTarget.href.split("#")[1]).scrollIntoView()
+    document.getElementById(e.currentTarget.dataset.href).scrollIntoView()
   }
 }
