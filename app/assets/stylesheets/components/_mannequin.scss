@@ -30,3 +30,7 @@
   .others { grid-area: 8 / 9 / 11 / 12; }
   .body { grid-area: 3 / 5 / 11 / 9; }
 }
+
+.mannequin a:has(.mannequin-item)  {
+  background-color: white;
+}
