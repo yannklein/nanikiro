@@ -1,30 +1,10 @@
 <div class="container h-100 py-5" data-controller="stacklist">
   <div class="row h-100 align-items-center justify-content-evenly">
     <% @closets.each do |closet| %>
-      <div class="col-12 col-md-4">
-        <%= link_to closet_path(closet), class: "w-100" do %>
-          <div class="card-vinyl" data-action="touchmove->stacklist#showStack" >
-            <% closet.wears.first(4).each do |wear| %>
-              <% if wear.photo.attached?  %>
-                <%= cl_image_tag wear.photo.key, effect: "make_transparent:15", :format=>"png", class: "card-vinyl-item" %>
-              <% else %>
-                <%= image_tag "wear.png", class: "card-vinyl-item" %>
-              <% end %>
-            <% end %>
-            <h3><%= closet.name %></h3>
-          </div>
-        <% end %>
-      </div>
+      <%= render 'closet_card', closet: closet %>
     <% end %>
-    <div class="col-12 col-md-4 text-center">
-      <a data-bs-toggle="modal" data-bs-target="#newCloset">
-        <div class="card-vinyl-new">
-          <svg xmlns="http://www.w3.org/2000/svg" style="fill:#FFF" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M640 162.8c0 6.917-2.293 13.88-7.012 19.7l-49.96 61.63c-6.32 7.796-15.62 11.85-25.01 11.85c-7.01 0-14.07-2.262-19.97-6.919L480 203.3V464c0 26.51-21.49 48-48 48H208C181.5 512 160 490.5 160 464V203.3L101.1 249.1C96.05 253.7 88.99 255.1 81.98 255.1c-9.388 0-18.69-4.057-25.01-11.85L7.012 182.5C2.292 176.7-.0003 169.7-.0003 162.8c0-9.262 4.111-18.44 12.01-24.68l135-106.6C159.8 21.49 175.7 16 191.1 16H225.6C233.3 61.36 272.5 96 320 96s86.73-34.64 94.39-80h33.6c16.35 0 32.22 5.49 44.99 15.57l135 106.6C635.9 144.4 640 153.6 640 162.8z"/></svg>
-          <h3><i class="fas fa-plus"></i> New Closet</h3>
-        </div>
-      </a>
-    </div>
+    <%= render 'new_closet_button' %>
   </div>
 </div>
 
-<%= render 'new_closet' %>
+<%= render 'new_closet_form' %>
