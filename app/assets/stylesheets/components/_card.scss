@@ -37,6 +37,36 @@
   filter: drop-shadow(0px 0px 8px white);
 }
 
+.card-vinyl.active .card-vinyl-item {
+  // box-shadow: 16px 0 16px -7px rgba(0,0,0,0.7);
+  filter: drop-shadow(24px 0px 24px rgba(255,255,255,0.7));
+}
+
+.card-vinyl.active .card-vinyl-item:nth-child(1) {
+  // box-shadow: 16px 0 16px -7px rgba(0,0,0,0.7);
+  filter: drop-shadow(24px 0px 24px rgba(255,255,255,0.7));
+}
+
+.card-vinyl.active .card-vinyl-item:nth-child(1) {
+  /*customizable*/
+  transform: rotateY(-40deg) translateZ(-40px) translateX(36px) scaleY(1.1);
+}
+
+.card-vinyl.active .card-vinyl-item:nth-child(2) {
+  /*customizable*/
+  transform: rotateY(-40deg) translateZ(0px) translateX(-24px) scaleY(1.05);
+}
+
+.card-vinyl.active .card-vinyl-item:nth-child(3) {
+  /*customizable*/
+  transform: rotateY(-40deg) translateZ(40px) translateX(-56px);
+}
+
+.card-vinyl.active .card-vinyl-item:nth-child(4) {
+  /*customizable*/
+  transform: rotateY(-40deg) translateZ(80px) translateX(-88px);
+}
+
 .card-vinyl:hover .card-vinyl-item {
   // box-shadow: 16px 0 16px -7px rgba(0,0,0,0.7);
   filter: drop-shadow(24px 0px 24px rgba(255,255,255,0.7));
