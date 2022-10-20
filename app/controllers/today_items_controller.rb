@@ -9,4 +9,10 @@ class TodayItemsController < ApplicationController
       render 'closet/index'
     end
   end
+
+  private 
+
+  def wear_params
+    params.require(:todays_item).permit(:wear_id)
+  end
 end
