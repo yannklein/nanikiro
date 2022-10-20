@@ -44,7 +44,12 @@
 
 .mannequin-item-remove {
   position: absolute;
-  right: 2px; 
-  top: 0px; 
-  color: $pink;
+  right: -10px;
+  top: -16px;
+  i {
+    color: $gray;
+    font-size: 24px;
+    background-color: white;
+    border-radius: 50%;
+  }
 }
