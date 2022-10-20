@@ -6,6 +6,7 @@ class ClosetsController < ApplicationController
   end
 
   def show
+    @todays_item = TodaysItem.new
     @wear_by_cat = @closet.wears.group_by { |wear| wear.category }
     @wear = Wear.new
   end

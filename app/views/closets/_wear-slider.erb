@@ -4,7 +4,9 @@
     <div class="swiper-wrapper">
       <% wears.each do |wear| %>
         <div class="swiper-slide">
-          <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100", effect: "make_transparent:15", :format=>"png",) : image_tag("wear.png", class: "w-100") %>
+          <button type="button" class="border-0 bg-white" data-bs-toggle="modal" data-bs-target="#wear-<%= wear.id %>">
+            <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100", effect: "make_transparent:15", :format=>"png",) : image_tag("wear.png", class: "w-100") %>
+          </button>
         </div>
       <% end %>
     </div>
@@ -19,3 +21,23 @@
     </div>
   </div>
 </div>
+
+<% wears.each do |wear| %>
+  <div class="modal fade" id="wear-<%= wear.id %>" tabindex="-1" aria-labelledby="wear-<%= wear.id %>Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-black" id="wear-<%= wear.id %>Label">Nice <%= wear.color %> <%= wear.wear_type %>! 👌</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex">
+          <button type="button" class="btn btn-secondary mt-3 me-3" data-bs-dismiss="modal">Nope</button>
+          <%= simple_form_for [@closet, @todays_item] do |f| %>
+            <%= f.association :wear, as: :hidden, input_html: { value: wear.id } %>
+            <%= f.submit 'Wear it today', class: "btn btn-primary"  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
