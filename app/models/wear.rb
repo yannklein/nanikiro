@@ -38,7 +38,7 @@ class Wear < ApplicationRecord
     ].include?(wear_type.to_sym)
     return :head if [
     ].include?(wear_type.to_sym)
-    return :shoes if [
+    return :feet if [
       :shoes,:hills
     ].include?(wear_type.to_sym)
     return :underwear if [

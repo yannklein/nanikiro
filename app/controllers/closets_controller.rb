@@ -1,7 +1,7 @@
 class ClosetsController < ApplicationController
   before_action :find_closet, only: [:show, :update, :destroy]
   def index
-    @closets = Closet.all
+    @closets = Closet.where(user: current_user)
     @closet = Closet.new
   end
 
