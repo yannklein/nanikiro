@@ -10,8 +10,14 @@
     <div class="navbar-vanilla-profile" data-action="click->navbar#openProfile">
       <img src="https://avatars2.githubusercontent.com/u/26819547" alt="">
       <ul>
-        <li><a href="#">プロファイル</a></li>
-        <li><a href="#">ログイン</a></li>
+        <% if user_signed_in? %>
+          <%# <li><a href="#">プロファイル</a></li> %>
+          <%= link_to "ログアウト", destroy_user_session_path, data: {method: :delete}, class: "dropdown-item" %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
