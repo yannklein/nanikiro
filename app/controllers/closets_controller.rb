@@ -2,6 +2,7 @@ class ClosetsController < ApplicationController
   before_action :find_closet, only: [:show, :update, :destroy]
   def index
     @closets = Closet.all
+    @closet = Closet.new
   end
 
   def show

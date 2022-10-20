@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :closets, except: [:new, :edit] do
     resources :wears, only: [:create]
+    resources :todays_items, only: [:create]
   end
   resources :wears, only: [:delete, :update]
 
