@@ -4,6 +4,14 @@
     <div class="swiper-wrapper">
       <% wears.each do |wear| %>
         <div class="swiper-slide">
+          <div class="swiper-wear-button" >
+            <%= link_to "#", data: {confirm: "Edit feature coming soon!"} do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
+            <%= link_to wear_path(wear), data: {method: :delete, confirm: "Do you really want to remove this cloth?"}  do %>
+              <i class="fas fa-times-circle"></i>
+            <% end %>
+          </div>
           <button type="button" class="border-0 bg-white" data-bs-toggle="modal" data-bs-target="#wear-<%= wear.id %>">
             <%= wear.photo.attached? ? cl_image_tag(wear.photo.key, class: "w-100") : image_tag("wear.png", class: "w-100") %>
           </button>

@@ -1,7 +1,7 @@
 class Wear < ApplicationRecord
   CATEGORY = [:jacket, :top, :bottom, :onepiece, :head, :shoes, :underwear, :other ]
   belongs_to :closet
-  has_many :todays_items
+  has_many :todays_items, dependent: :destroy
   has_one_attached :photo
   enum season: [:summer, :spring, :winter, :fall]
   enum color: [:white,:black,:grey,:yellow,:red,:blue,:green,:brown,:pink,:orange,:purple]

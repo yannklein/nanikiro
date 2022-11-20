@@ -14,7 +14,7 @@ class WearsController < ApplicationController
 
   def destroy
     @wear.destroy
-    redirect_to closets_path
+    redirect_to closet_path(@wear.closet)
   end
 
   def update
@@ -28,7 +28,7 @@ class WearsController < ApplicationController
   private 
 
   def find_wear
-    Wear.find(params[:id])
+    @wear = Wear.find(params[:id])
   end
 
   def wear_params
