@@ -5,7 +5,7 @@
       <%= link_to todays_item_path(@closet.todays(:head)), data: {method: :delete}, class: "mannequin-item-remove" do %>
         <i class="fas fa-times-circle"></i>
       <% end %>
-      <%= @closet.todays(:head).wear.photo.attached? ? cl_image_tag(@closet.todays(:head).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15", :format=>"png") : image_tag("wear.png", class: "w-100 mannequin-item") %>
+      <%= @closet.todays(:head).wear.photo.attached? ? cl_image_tag(@closet.todays(:head).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15") : image_tag("wear.png", class: "w-100 mannequin-item") %>
     <% else %>
       <svg style="fill: #FFF" version="1.1" viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -93,7 +93,7 @@
       <%= link_to todays_item_path(@closet.todays(:top)), data: {method: :delete}, class: "mannequin-item-remove" do %>
         <i class="fas fa-times-circle"></i>
       <% end %>
-      <%= @closet.todays(:top).wear.photo.attached? ? cl_image_tag(@closet.todays(:top).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15", :format=>"png") : image_tag("wear.png", class: "w-100 mannequin-item") %>
+      <%= @closet.todays(:top).wear.photo.attached? ? cl_image_tag(@closet.todays(:top).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15") : image_tag("wear.png", class: "w-100 mannequin-item") %>
     <% else %>
       <svg style="fill: #FFF" xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 680 540"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M640 162.8c0 6.917-2.293 13.88-7.012 19.7l-49.96 61.63c-6.32 7.796-15.62 11.85-25.01 11.85c-7.01 0-14.07-2.262-19.97-6.919L480 203.3V464c0 26.51-21.49 48-48 48H208C181.5 512 160 490.5 160 464V203.3L101.1 249.1C96.05 253.7 88.99 255.1 81.98 255.1c-9.388 0-18.69-4.057-25.01-11.85L7.012 182.5C2.292 176.7-.0003 169.7-.0003 162.8c0-9.262 4.111-18.44 12.01-24.68l135-106.6C159.8 21.49 175.7 16 191.1 16H225.6C233.3 61.36 272.5 96 320 96s86.73-34.64 94.39-80h33.6c16.35 0 32.22 5.49 44.99 15.57l135 106.6C635.9 144.4 640 153.6 640 162.8z"/></svg>
     <% end %>
@@ -103,7 +103,7 @@
       <%= link_to todays_item_path(@closet.todays(:bottom)), data: {method: :delete}, class: "mannequin-item-remove" do %>
         <i class="fas fa-times-circle"></i>
       <% end %>
-      <%= @closet.todays(:bottom).wear.photo.attached? ? cl_image_tag(@closet.todays(:bottom).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15", :format=>"png") : image_tag("wear.png", class: "w-100 mannequin-item") %>
+      <%= @closet.todays(:bottom).wear.photo.attached? ? cl_image_tag(@closet.todays(:bottom).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15") : image_tag("wear.png", class: "w-100 mannequin-item") %>
     <% else %>
       <svg style="fill: #FFF" version="1.1" viewBox="160 0 380 560" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -168,7 +168,7 @@
       <%= link_to todays_item_path(@closet.todays(:feet)), data: {method: :delete}, class: "mannequin-item-remove" do %>
         <i class="fas fa-times-circle"></i>
       <% end %>
-      <%= @closet.todays(:feet).wear.photo.attached? ? cl_image_tag(@closet.todays(:feet).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15", :format=>"png") : image_tag("wear.png", class: "w-100 mannequin-item") %>
+      <%= @closet.todays(:feet).wear.photo.attached? ? cl_image_tag(@closet.todays(:feet).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15") : image_tag("wear.png", class: "w-100 mannequin-item") %>
     <% else %>
       <svg style="fill: #FFF" version="1.1" viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -248,7 +248,7 @@
       <%= link_to todays_item_path(@closet.todays(:jacket)), data: {method: :delete}, class: "mannequin-item-remove" do %>
         <i class="fas fa-times-circle"></i>
       <% end %>
-      <%= @closet.todays(:jacket).wear.photo.attached? ? cl_image_tag(@closet.todays(:jacket).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:5", :format=>"png") : image_tag("wear.png", class: "w-100 mannequin-item") %>
+      <%= @closet.todays(:jacket).wear.photo.attached? ? cl_image_tag(@closet.todays(:jacket).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:5") : image_tag("wear.png", class: "w-100 mannequin-item") %>
     <% else %>
       <svg style="fill: #FFF" version="1.1" viewBox="100 0 500 560" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -328,7 +328,7 @@
       <%= link_to todays_item_path(@closet.todays(:others)), data: {method: :delete}, class: "mannequin-item-remove" do %>
         <i class="fas fa-times-circle"></i>
       <% end %>
-      <%= @closet.todays(:others).wear.photo.attached? ? cl_image_tag(@closet.todays(:others).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15", :format=>"png") : image_tag("wear.png", class: "w-100 mannequin-item") %>
+      <%= @closet.todays(:others).wear.photo.attached? ? cl_image_tag(@closet.todays(:others).wear.photo.key, class: "w-100 mannequin-item", effect: "make_transparent:15") : image_tag("wear.png", class: "w-100 mannequin-item") %>
     <% else %>
       <svg style="fill: #FFF" version="1.1" viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
