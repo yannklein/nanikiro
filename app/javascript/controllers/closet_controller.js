@@ -1,15 +1,21 @@
 import { Controller } from '@hotwired/stimulus'
+import { Modal } from "bootstrap"
+window.modal = Modal
 
 export default class extends Controller {
-  static targets = [ 'link' ]
+  static targets = [ 'link', 'noClothModal' ]
 
   connect() {
     console.log('Hello from mannequin-controller.js')
-    // console.log(this.testTarget)
   }
   scroll(e){
     e.preventDefault()
-    console.log(e.currentTarget);
-    document.getElementById(e.currentTarget.dataset.href).scrollIntoView()
+    const clothCard = document.getElementById(e.currentTarget.dataset.href)
+    if(clothCard) {
+      clothCard.scrollIntoView()
+    } else {
+      const noClothBsModal = new Modal(this.noClothModalTarget)
+      noClothBsModal.show()
+    }
   }
 }
