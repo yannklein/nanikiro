@@ -11,9 +11,13 @@ export default class extends Controller {
   scroll(e){
     e.preventDefault()
     const clothCard = document.getElementById(e.currentTarget.dataset.href)
+    console.log(e.currentTarget.dataset.href);
+    console.log(clothCard);
     if(clothCard) {
       clothCard.scrollIntoView()
     } else {
+      console.log(this.noClothModalTarget);
+      console.log("no clothes!");
       const noClothBsModal = new Modal(this.noClothModalTarget)
       noClothBsModal.show()
     }
