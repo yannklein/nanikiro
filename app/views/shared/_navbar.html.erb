@@ -8,7 +8,7 @@
       <%= link_to "私の服", closets_path %>
     </div>
     <div class="navbar-vanilla-profile" data-action="click->navbar#openProfile">
-      <img src="https://avatars2.githubusercontent.com/u/26819547" alt="">
+      <img src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text  y=%221em%22 font-size=%2264%22><%= current_user.email.upcase[0..1] %></text></svg>' alt="">
       <ul>
         <% if user_signed_in? %>
           <%# <li><a href="#">プロファイル</a></li> %>
