@@ -2,15 +2,15 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-secondary" id="newClosetLabel">Add some new clothes</h5>
+        <h5 class="modal-title text-secondary" id="newClosetLabel">新しいクロゼットに服を入れましょう！</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-secondary">
         <%= simple_form_for @closet do |f| %>
-          <%= f.input :name %>
+          <%= f.input :name, label: 'クローゼット名を選んでください' %>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <%= f.submit "Assemble my closet!", class:"btn btn-primary" %>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+            <%= f.submit "クロゼットを組み立つ", class:"btn btn-primary" %>
           </div>
         <% end %>
       </div>
