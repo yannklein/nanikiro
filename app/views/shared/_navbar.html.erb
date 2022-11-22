@@ -4,9 +4,11 @@
     <h2 class="navbar-vanilla-brand" >な二キロ</h2>
   <% end %>
   <div class="navbar-vanilla-section">
+    <% if user_signed_in? %>
     <div class="navbar-vanilla-menu">
       <%= link_to "私の服", closets_path %>
     </div>
+    
     <div class="navbar-vanilla-profile" data-action="click->navbar#openProfile">
       <img src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text  x=%2212px%22 y=%2270px%22 font-size=%2256px%22><%= current_user.email.upcase[0..1] %></text></svg>' alt="">
       <ul>
@@ -20,5 +22,7 @@
         <% end %>
       </ul>
     </div>
+    <% end %>
+    
   </div>
 </div>
