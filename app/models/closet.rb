@@ -1,4 +1,5 @@
 class Closet < ApplicationRecord
+  self.table_name = "nanikiro_closets"
   belongs_to :user
   has_many :wears, foreign_key: "nanikiro_closet_id"
   validates :name, presence: true, uniqueness: true
