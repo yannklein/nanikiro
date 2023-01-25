@@ -1,6 +1,6 @@
 class Closet < ApplicationRecord
   belongs_to :user
-  has_many :wears
+  has_many :wears, foreign_key: "nanikiro_closet_id"
   validates :name, presence: true, uniqueness: true
 
   def todays(category)

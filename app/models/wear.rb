@@ -1,8 +1,14 @@
 class Wear < ApplicationRecord
+  self.table_name = "nanikiro_wears"
   CATEGORY = [:jacket, :top, :bottom, :onepiece, :head, :shoes, :underwear, :other ]
-  belongs_to :closet
-  has_many :todays_items, dependent: :destroy
-  has_one_attached :photo
+  belongs_to :closet, foreign_key: "nanikiro_closet_id"
+  has_many :todays_items, dependent: :destroy, foreign_key: "nanikiro_wear_id"
+  # has_one_attached :photo
+  def photo
+    attachement = ActiveStorage::Attachment.find_by(name: :photo, record_type: 'NanikiroWear', record_id: self.id)
+    attachement.define_singleton_method(:attached?) { !!attachement.key }
+    attachement
+  end
   enum season: [:summer, :spring, :winter, :fall]
   enum color: [:white,:black,:grey,:yellow,:red,:blue,:green,:brown,:pink,:orange,:purple]
   enum wear_type: [
