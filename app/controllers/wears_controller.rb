@@ -32,6 +32,6 @@ class WearsController < ApplicationController
   end
 
   def wear_params
-    params.require(:wear).permit(:season, :wear_type, :closet_id, :photo, :color)
+    params.require(:wear).permit(:season, :wear_type, :nanikiro_closet_id, :photo, :color)
   end
 end

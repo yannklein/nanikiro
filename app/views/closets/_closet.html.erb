@@ -1,6 +1,6 @@
 <div class="mb-5">
   <% wear_by_cat.each do |category, wears| %>
-    <%= render 'wear-slider', category: category, wears: wears %>
+    <%= render 'closets/wear-slider', category: category, wears: wears %>
   <% end %>
   <div class="closet-menu">
     <a data-href="mannequin" data-action="click->closet#scroll">
@@ -11,5 +11,5 @@
     </a>
   </div>
 </div>
-<%= render "new_wear_modal" %>
-<%= render "no_cloth_modal" %>
+<%= render "closets/new_wear_modal" %>
+<%= render "closets/no_cloth_modal" %>

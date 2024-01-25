@@ -6,6 +6,8 @@ class TodaysItemsController < ApplicationController
     @closet = Closet.find(params[:closet_id])
     @todays_item.closet = @closet
     @todays_item.weared_on = Date.today
+    @wear_by_cat = @closet.wears.group_by { |wear| wear.category }
+    @wear = Wear.new
     if @todays_item.save
       redirect_to closet_path(@closet)
     else
@@ -25,6 +27,6 @@ class TodaysItemsController < ApplicationController
   end
 
   def todays_item_params
-    params.require(:todays_item).permit(:wear_id)
+    params.require(:todays_item).permit(:nanikiro_wear_id)
   end
 end
