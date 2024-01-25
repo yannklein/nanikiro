@@ -9,7 +9,7 @@ class TodaysItemsController < ApplicationController
     if @todays_item.save
       redirect_to closet_path(@closet)
     else
-      render 'closet/show'
+      render 'closets/show'
     end
   end
 
